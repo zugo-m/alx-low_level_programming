@@ -8,17 +8,18 @@
  */
 int main(void)
 {
-	unsigned long int i, j, k, next, j1, j2, k1, k2, next1, next2;
+	unsigned long int i, j, k, j1, j2, k1, k2;
 
 	j = 1;
 	k = 2;
 
-	for (i = 1; i < 92; ++i)
+	printf("%lu", j);
+
+	for (i = 1; i < 91; i++)
 	{
-		printf("%lu, ", j);
-		next = j + k;
-		j = k;
-		k = next;
+		printf(", %lu", j);
+		k = k + j;
+		j = k - j;
 	}
 
 	j1 = j / 1000000000;
@@ -26,18 +27,17 @@ int main(void)
 	k1 = k / 1000000000;
 	k2 = k % 1000000000;
 
-	for (i = 92; i < 99; ++i)
+	for (i = 91; i < 99; ++i)
 	{
-		printf("%lu", j1 + (j2 / 1000000000));
-		printf("%lu, ", j2 % 1000000000);
-		next1 = j1 + k1;
-		j1 = k1;
-		k1 = next1;
-		next2 = j2 + k2;
-		j2 = k2;
-		k2 = next2;
-
+		printf(", %lu", j1 + (j2 / 1000000000));
+		printf("%lu", j2 % 1000000000);
+		k1 = k1 + j1;
+		j1 = k1 - j1;
+		k2 = k2 + j2;
+		j2 = k2 - j2;
 	}
+
+	printf("\n");
 
 	return (0);
 }
