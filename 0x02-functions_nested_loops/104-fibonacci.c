@@ -1,7 +1,8 @@
 #include <stdio.h>
 
 /**
- * main - finds and prints the first 98 Fibonacci numbers, starting with 1 and 2
+ * main - finds and prints the first 98 Fibonacci numbers,
+ * starting with 1 and 2
  * followed by a new line
  * Return: ALways 0 (Success)
  */
@@ -20,21 +21,22 @@ int main(void)
 		k = next;
 	}
 
-	j1 = j / 10000000;
-	j2 = j % 10000000;
-	k1 = k / 10000000;
-	k2 = k % 10000000;
+	j1 = j / 1000000000;
+	j2 = j % 1000000000;
+	k1 = k / 1000000000;
+	k2 = k % 1000000000;
 
 	for (i = 92; i < 99; ++i)
 	{
-		printf("%lu", j1);
-		printf("%lu, ", j2);
+		printf("%lu", j1 + (j2 / 1000000000));
+		printf("%lu, ", j2 % 1000000000);
 		next1 = j1 + k1;
 		j1 = k1;
 		k1 = next1;
 		next2 = j2 + k2;
 		j2 = k2;
 		k2 = next2;
+
 	}
 
 	return (0);
