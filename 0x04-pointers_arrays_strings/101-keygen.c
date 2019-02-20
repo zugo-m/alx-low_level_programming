@@ -10,7 +10,7 @@
  */
 int main(void)
 {
-	srand(time(NULL));
+	srand(time(0));
 
 	int pass[100];
 	int i, sum, n;
