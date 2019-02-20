@@ -20,12 +20,12 @@ int main(void)
 
 	for (i = 0; i < 100; i++)
 	{
-		pass[i] = rand() % 26;
+		pass[i] = rand() % 126;
 		sum += (pass[i] + '0');
 		putchar(pass[i] + '0');
-		if ((2772 - sum) - '0' < 26)
+		if ((2772 - sum) - '0' < 126)
 		{
-			n = 2772 - sum - '0';
+			n = 2772 - sum;
 			sum += n;
 			putchar(n + '0');
 			break;
