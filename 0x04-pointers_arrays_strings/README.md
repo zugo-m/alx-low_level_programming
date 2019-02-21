@@ -21,3 +21,7 @@ File 9-strcpy.c is a function that copies the string pointed to by src, includin
 File 100-atoi.c is a function that convert a string to an integer.
 
 File 101-keygen.c is a program that generates random valid passwords for the program 101-crackme.
+
+File _putchar.c contains the _putchar() function definition.
+
+File holberton.h is the header file containing all the function prototypes used in this project.
