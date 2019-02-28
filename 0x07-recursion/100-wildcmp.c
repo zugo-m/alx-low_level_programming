@@ -50,6 +50,8 @@ int wildcmp(char *s1, char *s2)
  */
 int bandersnatch(char *s1, char *s2)
 {
+	if (*s1 == '\0')
+		return (0);
 	if (*s1 == *s2)
 		return (wildcmp(s1, s2));
 	return (bandersnatch(s1 + 1, s2));
