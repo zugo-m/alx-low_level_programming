@@ -47,27 +47,41 @@ int _atoi(char *s)
 }
 
 /**
- * main - multiplies two numbers
+ * main - adds positive numbers
  * @argc: number of arguments
  * @argv[]: array of arguments
  *
- * Return: 0 (Success), 1 (Error)
+ * Return: 0 (Success), or 1 (Error)
  */
-int main (int argc, char *argv[])
+int main(int argc, char *argv[])
 {
-	int result, num1, num2;
+	int sum, num, i, j;
 
-	if (argc < 3 || argc > 3)
+	sum = 0;
+
+	/*if (argc < 2)
 	{
-		printf("Error\n");
-		return (1);
+		puts("0");
+	}*/
+
+	for (i = 1; i < argc; i++)
+	{
+		if (!_atoi(argv[i]))
+		{
+			puts("Error");
+			return (1);
+		}
 	}
 
-	num1 = _atoi(argv[1]);
-	num2 = _atoi(argv[2]);
-	result = num1 * num2;
+	for (j = 1; j < argc; j++)
+	{
+		num = _atoi(argv[j]);
+		if (num >= 0)
+		{
+			sum += num;
+		}
+	}
 
-	printf("%d\n", result);
-
+	printf("%d\n", sum);
 	return (0);
 }
