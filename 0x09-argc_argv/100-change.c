@@ -21,6 +21,7 @@ int main(int argc, char *argv[])
 		printf("Error\n");
 		return (1);
 	}
+
 	num = atoi(argv[1]);
 	result = 0;
 
@@ -32,7 +33,6 @@ int main(int argc, char *argv[])
 
 	for (i = 0; argv[1][i] != '\0'; i++)
 	{
-
 		if ((argv[1][i] < '0' || argv[1][i] > '9') && argv[1][0] != '-')
 		{
 			puts("Error");
@@ -48,6 +48,7 @@ int main(int argc, char *argv[])
 			result++;
 		}
 	}
+
 	printf("%d\n", result);
 	return (0);
 }
