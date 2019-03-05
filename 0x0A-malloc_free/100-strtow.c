@@ -11,24 +11,19 @@
 char **strtow(char *str)
 {
 	char **matrix;
-	int i, j = 0, k = 0, len = 0, len1 = 0;
+	int i, j = 0, k = 0, len1 = 0;
 
 	for (i = 0; str[i] != '\0'; i++)
 	{
-		if (str[i] != ' ')
-		{
-			len++;
-			len1++;
-		} else
-			len1++;
+		len1++;
 	}
 
-	matrix = (char **) malloc(sizeof(char *) * (len + 1));
+	matrix = (char **) malloc(sizeof(char *) * (len1 + 1));
 
 	if (matrix == NULL)
 		return (NULL);
-		
-	*matrix = (char *) malloc(sizeof(char) * (len + 1));
+
+	*matrix = (char *) malloc(sizeof(char) * (len1 + 1));
 
 	if (*matrix == NULL)
 		return (NULL);
