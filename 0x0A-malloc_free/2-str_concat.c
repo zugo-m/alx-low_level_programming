@@ -22,14 +22,14 @@ char *str_concat(char *s1, char *s2)
 	if (s3 == NULL)
 		return (NULL);
 
-	if (*s1 == '\0')
+	if (s1 == NULL)
 	{
 		while ((s3[i++] = s2[j++]) != '\0')
 			;
 	}
 	i = 0;
 	j = 0;
-	if (*s2 == '\0')
+	if (s2 == NULL)
 	{
 		while ((s3[i++] = s1[j++]) != '\0')
 			;
