@@ -10,4 +10,6 @@ File 4-free_grid.c is a function that frees a 2 dimensional grid previously crea
 
 File 5-argstostr.c is a function that concatenates all the arguments of our program.
 
+File 100-strtow.c is a function that splits a string into words.
+
 File holberton.h is a header file contaning all the function prototypes.
