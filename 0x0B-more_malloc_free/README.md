@@ -8,4 +8,6 @@ File 3-array_range.c is a function that creates an array of integers.
 
 File 100-realloc.c is a function that reallocates a memory block using malloc and free.
 
+File 101-mul.c is a program that multiplies two positive numbers.
+
 File holberton.h is the header file for all the function prototypes.
