@@ -7,5 +7,3 @@ File 2-print_dog.c is a function that prints a struct dog.
 File 4-new_dog.c is a function that creates a new dog.
 
 File 5-free_dog.c is a function that frees dogs.
-
-File holberton.h is a headerfile containing all the function prototypes contained in this project.
