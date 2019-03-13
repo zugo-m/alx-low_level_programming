@@ -13,6 +13,7 @@
 int main(int argc, char *argv[])
 {
 	int arg1, arg2, result;
+	int (*func)(int, int);
 
 	if (argc != 4)
 	{
@@ -23,7 +24,9 @@ int main(int argc, char *argv[])
 	arg1 = atoi(argv[1]);
 	arg2 = atoi(argv[3]);
 
-	if (!get_op_func(argv[2]))
+	func = get_op_func(argv[2]);
+
+	if (!func)
 	{
 		printf("Error\n");
 		exit(99);
@@ -35,7 +38,7 @@ int main(int argc, char *argv[])
 		exit(100);
 	}
 
-	result = get_op_func(argv[2])(arg1, arg2);
+	result = func(arg1, arg2);
 
 	printf("%d\n", result);
 
