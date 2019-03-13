@@ -1,6 +1,3 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
 #include "3-calc.h"
 
 /**
@@ -13,6 +10,7 @@
 int main(int argc, char *argv[])
 {
 	int arg1, arg2, result;
+	char o;
 	int (*func)(int, int);
 
 	if (argc != 4)
@@ -32,7 +30,9 @@ int main(int argc, char *argv[])
 		exit(99);
 	}
 
-	if ((strcmp(argv[2], "/") == 0 || strcmp(argv[2], "%") == 0) && arg2 == 0)
+	o = *argv[2];
+
+	if ((o == '/' || o == '%') && arg2 == 0)
 	{
 		printf("Error\n");
 		exit(100);
