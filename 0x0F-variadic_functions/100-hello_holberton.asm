@@ -1,7 +1,7 @@
 section     .text
-global      main                              ;must be declared for linker (ld)
+global      main                              	;must be declared as main, not _start
 
-main:                                         ;tell linker entry point
+main:                                         	;tell linker entry point
 
     mov     edx,len                             ;message length
     mov     ecx,msg                             ;message to write
@@ -14,5 +14,5 @@ main:                                         ;tell linker entry point
 
 section     .data
 
-msg     db  'Hello, Holberton',0xa                 ;our dear string
-len     equ $ - msg                             ;length of our dear string
+msg     db  'Hello, Holberton',0xa              ;our string
+len     equ $ - msg                             ;length of our string
