@@ -13,7 +13,7 @@ void print_all(const char * const format, ...)
 
 	va_start(list, format);
 
-	while (format[i] && format != NULL)
+	while (format[i])
 	{
 		flag = 1;
 		switch (format[i])
