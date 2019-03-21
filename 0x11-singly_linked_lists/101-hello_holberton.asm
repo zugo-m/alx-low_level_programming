@@ -10,5 +10,5 @@ main:
 	  ret
 
 	  section .data
-format: db  `%s\n`, 0
-sentence: db "Hello, Holberton", 0
+format: db  `%s\n`,0
+sentence: db "Hello, Holberton",0
