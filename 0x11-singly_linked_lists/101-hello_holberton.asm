@@ -1,6 +1,5 @@
           global    main
           extern    printf
-          section   .text
 main:
 	  mov   edi, format
 	  xor   eax, eax
