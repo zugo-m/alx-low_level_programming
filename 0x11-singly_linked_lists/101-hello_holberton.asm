@@ -3,9 +3,9 @@
 
           section   .text
 main:
-          mov	rsi, sentence
-	  mov   rdi, format
-	  xor rax, rax
+          mov	esi, sentence
+	  mov   edi, format
+	  xor eax, eax
 	  call printf
 	  ret
 
