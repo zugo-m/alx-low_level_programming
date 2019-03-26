@@ -9,27 +9,25 @@
 size_t print_listint_safe(const listint_t *head)
 {
 	size_t num = 0;
-	uint i, j;
-	const listint_t *arr[20];
+	long int diff;
 
 	if (!head)
 		exit(98);
 
-	for (i = 0; head; i++)
+	while (head)
 	{
-		for (j = 0; j < 20; j++)
-		{
-			if (head != arr[j] && head != arr[i])
-			{
-				arr[i] = head;
-				break;
-			}
-			else
-				exit(98);
-		}
+		diff = head - head->next;
 		printf("[%p] %d\n", (void *)head, head->n);
-		num++;
-		head = head->next;
+		if (diff >= 0)
+		{
+			num++;
+			head = head->next;
+		}
+		else
+		{
+			printf("-> [%p] %d\n", (void *)head->next, head->next->n);
+			exit(98);
+		}
 	}
 
 	return (num);
