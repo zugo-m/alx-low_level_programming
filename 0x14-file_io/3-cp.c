@@ -9,7 +9,7 @@
  */
 int main(int argc, char *argv[])
 {
-	int fd_r, fd_w, r, w, a, b;
+	int fd_r, fd_w, r, a, b;
 	char buf[1024];
 
 	if (argc != 3)
@@ -25,15 +25,15 @@ int main(int argc, char *argv[])
 		exit(98);
 	}
 
-	r = read(fd_r, buf, 1024);
-	buf[r] = '\0';
-
 	fd_w = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
-	w = write(fd_w, buf, r);
-	if (fd_w < 0 || w != r)
+
+	while ((r = read(fd_r, buf, 1024)) > 0)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
-		exit(99);
+		if (write(fd_w, buf, r) != r || fd_w < 0)
+		{
+			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
+			exit(99);
+		}
 	}
 
 	a = close(fd_r);
