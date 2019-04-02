@@ -23,7 +23,7 @@ int main(int argc, char *argv[])
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
 		exit(98);
 	}
-	fd_w = open(argv[2], O_CREAT | O_RDWR | O_TRUNC, 0664);
+	fd_w = open(argv[2], O_CREAT | O_WRONL | O_TRUNC, 0664);
 	while ((r = read(fd_r, buf, 1024)) > 0)
 	{
 		if (fd_w < 0 || write(fd_w, buf, r) != r)
