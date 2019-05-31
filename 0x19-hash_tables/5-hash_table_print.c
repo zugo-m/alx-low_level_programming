@@ -4,20 +4,15 @@
  * print_list - prints all the elements of a linked list
  * @h: pointer to the list_t list to print
  */
-int print_list(hash_node_t *h)
+void print_list(hash_node_t *h)
 {
-	int s = 0;
-
 	while (h)
 	{
 		printf("'%s': '%s'", h->key, h->value);
 		if (h->next)
 			printf(", ");
 		h = h->next;
-		s++;
 	}
-
-	return (s);
 }
 /**
  * hash_table_print - prints a hash table
@@ -26,18 +21,28 @@ int print_list(hash_node_t *h)
 void hash_table_print(const hash_table_t *ht)
 {
 	unsigned long int i;
-	int flag = 0, size = 0;
+	hash_node_t *node = NULL;
+	char *last_key = NULL;
+	unsigned long int index;
 
-	printf("{");
 	for (i = 0; i < ht->size; i++)
 	{
-		if (flag == 1)
-			printf(", ");
-		size = print_list(ht->array[i]);
-		if (size > 0)
-			flag = 1;
-		else
-			flag = 0;
+		if (ht->array[i] != NULL)
+			node = ht->array[i];
+	}
+
+	printf("{");
+
+	if (node)
+	{
+		last_key = node->key;
+		index = key_index((const unsigned char *)last_key, ht->size);
+		for (i = 0; i < ht->size; i++)
+		{
+			print_list(ht->array[i]);
+			if (ht->array[i] && i < index)
+				printf(", ");
+		}
 	}
 
 	printf("}\n");
