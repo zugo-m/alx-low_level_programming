@@ -25,6 +25,12 @@ void hash_table_print(const hash_table_t *ht)
 	char *last_key = NULL;
 	unsigned long int index;
 
+	if (!ht)
+	{
+		printf("{}\n");
+		return;
+	}
+
 	for (i = 0; i < ht->size; i++)
 	{
 		if (ht->array[i] != NULL)

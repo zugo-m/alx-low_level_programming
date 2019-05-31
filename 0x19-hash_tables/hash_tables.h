@@ -47,5 +47,6 @@ void replace_value(hash_node_t **ht, const char *key, const char *value);
 int check_key(hash_node_t *ht, const char *key);
 hash_node_t *add_node(hash_node_t **head, const char *key, const char *value);
 void print_list(hash_node_t *h);
+void free_list(hash_node_t *head);
 
 #endif
