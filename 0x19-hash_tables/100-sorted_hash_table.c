@@ -13,18 +13,17 @@ shash_table_t *shash_table_create(unsigned long int size)
 	if (size == 0)
 		return (NULL);
 
-	sht = malloc(sizeof(shash_table_t));
+	sht = calloc(1, sizeof(shash_table_t));
 	if (!sht)
 		return (NULL);
 
 	sht->size = size;
 	sht->array = calloc((size_t)sht->size, sizeof(shash_node_t *));
 	if (sht->array == NULL)
+	{
+		free(sht);
 		return (NULL);
-
-	sht->shead = NULL;
-
-	sht->stail = NULL;
+	}
 
 	return (sht);
 }
@@ -104,12 +103,13 @@ void insert_sort(shash_node_t *node, shash_table_t *ht)
  */
 char *shash_table_get(const shash_table_t *ht, const char *key)
 {
-	unsigned long int index = key_index((const unsigned char *)key, ht->size);
+	unsigned long int index;
 	shash_node_t *node = NULL;
 
 	if (!ht)
 		return (NULL);
 
+	index = key_index((const unsigned char *)key, ht->size);
 	node = (ht->array)[index];
 
 	while (node)
@@ -238,10 +238,8 @@ shash_node_t *add_node_s(shash_node_t **head, const char *key,
 	new->value = strdup(value);
 
 	if (*head == NULL)
-	{
 		(*head) = new;
-		new->next = NULL;
-	} else
+	else
 	{
 		new->next = (*head);
 		(*head) = new;
