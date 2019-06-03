@@ -173,13 +173,10 @@ void shash_table_print_rev(const shash_table_t *ht)
  */
 void shash_table_delete(shash_table_t *ht)
 {
-	unsigned long int i;
-
 	if (!ht)
 		return;
 
-	for (i = 0; i < ht->size; i++)
-		free_list_s(ht->array[i]);
+	free_list_s(ht->shead);
 	free(ht->array);
 	free(ht);
 }
