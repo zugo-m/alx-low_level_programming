@@ -196,6 +196,8 @@ void replace_value_s(shash_node_t **ht, const char *key, const char *value)
 
 	free(temp->value);
 	temp->value = strdup(value);
+	if (!temp->value)
+		exit(1);
 }
 
 /**
@@ -235,7 +237,18 @@ shash_node_t *add_node_s(shash_node_t **head, const char *key,
 		return (NULL);
 
 	new->key = strdup(key);
+	if (!new->key)
+	{
+		free(new);
+		return (NULL);
+	}
 	new->value = strdup(value);
+	if (!new->value)
+	{
+		free(new);
+		free(new->key);
+		return (NULL);
+	}
 
 	if (*head == NULL)
 		(*head) = new;
