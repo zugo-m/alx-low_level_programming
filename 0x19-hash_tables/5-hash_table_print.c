@@ -14,6 +14,7 @@ void print_list(hash_node_t *h)
 		h = h->next;
 	}
 }
+
 /**
  * hash_table_print - prints a hash table
  * @ht: hash table to print
@@ -26,10 +27,7 @@ void hash_table_print(const hash_table_t *ht)
 	unsigned long int index;
 
 	if (!ht)
-	{
-		printf("{}\n");
 		return;
-	}
 
 	for (i = 0; i < ht->size; i++)
 	{
