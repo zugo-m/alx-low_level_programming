@@ -260,7 +260,7 @@ void free_list_s(shash_node_t *head)
 
 	while (head)
 	{
-		temp = head->next;
+		temp = head->snext;
 		free(head->key);
 		free(head->value);
 		free(head);
