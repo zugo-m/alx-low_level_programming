@@ -2,7 +2,7 @@
 
 /**
  * print_list - prints all the elements of a linked list
- * @h: pointer to the list_t list to print
+ * @h: pointer to the hash_node_t list to print
  */
 void print_list(hash_node_t *h)
 {
