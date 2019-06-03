@@ -47,10 +47,7 @@ int shash_table_set(shash_table_t *ht, const char *key, const char *value)
 	index = key_index((unsigned char *)key, ht->size);
 
 	if (check_key_s(ht->array[index], key))
-	{
-		replace_value_s(&ht->array[index], key, value);
-		return (1);
-	}
+		return (replace_value_s(&ht->array[index], key, value));
 	new = add_node_s(&ht->array[index], key, value);
 	if (!new)
 		return (0);
@@ -186,8 +183,10 @@ void shash_table_delete(shash_table_t *ht)
  * @ht: double pointer to the shash_node_t list
  * @key: new key to add in the node
  * @value: value to add in the node
+ *
+ * Return: 1 on success, 0 on failure
  */
-void replace_value_s(shash_node_t **ht, const char *key, const char *value)
+int replace_value_s(shash_node_t **ht, const char *key, const char *value)
 {
 	shash_node_t *temp = *ht;
 
@@ -197,7 +196,8 @@ void replace_value_s(shash_node_t **ht, const char *key, const char *value)
 	free(temp->value);
 	temp->value = strdup(value);
 	if (!temp->value)
-		exit(1);
+		return (0);
+	return (1);
 }
 
 /**
