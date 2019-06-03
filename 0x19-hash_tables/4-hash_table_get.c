@@ -13,7 +13,7 @@ char *hash_table_get(const hash_table_t *ht, const char *key)
 	unsigned long int index = key_index((const unsigned char *)key, ht->size);
 	hash_node_t *node = NULL;
 
-	if (!ht)
+	if (!ht || !key || !strcmp(key, ""))
 		return (NULL);
 
 	node = (ht->array)[index];
