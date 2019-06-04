@@ -15,3 +15,4 @@ Files | Desciption
 [4-hash_table_get.c](./4-hash_table_get.c) | C function that retrieves a value associated with a key
 [5-hash_table_print.c](./5-hash_table_print.c) | C function that prints a hash table
 [6-hash_table_delete.c](./6-hash_table_delete.c) | C function that deletes a hash table
+[100-sorted_hash_table.c](./100-sorted_hash_table.c) | C functions for a sorted hash table
