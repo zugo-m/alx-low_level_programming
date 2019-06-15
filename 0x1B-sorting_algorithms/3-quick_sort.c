@@ -25,24 +25,24 @@ void quick_sort(int *array, size_t size)
  */
 void quick_recursion(int *array, int left, int right, size_t size)
 {
-	int pivot;
+	int piv;
 
 	if (left < right)
 	{
-		pivot = partition(array, left, right, size);
-		quick_recursion(array, left, pivot - 1, size);
-		quick_recursion(array, pivot + 1, right, size);
+		piv = partition(array, left, right, size);
+		quick_recursion(array, left, piv - 1, size);
+		quick_recursion(array, piv + 1, right, size);
 	}
 }
 
 /**
- * partition - gives a pivot index for Quicksort
- * @array: array to find the pivot in
+ * partition - gives a piv index for Quicksort
+ * @array: array to find the piv in
  * @left: index of the left element
  * @right: index of the right element
  * @size: size of the array
  *
- * Return: the index of the pivot element
+ * Return: the index of the piv element
  */
 int partition(int *array, int left, int right, size_t size)
 {
