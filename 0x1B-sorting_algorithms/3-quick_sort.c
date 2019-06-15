@@ -29,9 +29,9 @@ void quick_recursion(int *array, int left, int right, size_t size)
 
 	if (left < right)
 	{
-    		pivot = partition(array, left, right, size);
-    		quick_recursion(array, left, pivot - 1, size);
-    		quick_recursion(array, pivot+1, right, size);
+		pivot = partition(array, left, right, size);
+		quick_recursion(array, left, pivot - 1, size);
+		quick_recursion(array, pivot + 1, right, size);
 	}
 }
 
