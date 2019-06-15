@@ -56,9 +56,13 @@ int partition(int *array, int left, int right, size_t size)
 		if (array[j] < array[right])
 		{
 			i++;
-			tmp = array[i];
-			array[i] = array[j];
-			array[j] = tmp;
+			if (i != j)
+			{
+				tmp = array[i];
+				array[i] = array[j];
+				array[j] = tmp;
+				print_array(array, size);
+			}
 		}
 	}
 
@@ -67,8 +71,8 @@ int partition(int *array, int left, int right, size_t size)
 		tmp = array[i + 1];
 		array[i + 1] = array[right];
 		array[right] = tmp;
+		print_array(array, size);
 	}
 
-	print_array(array, size);
 	return (i + 1);
 }
