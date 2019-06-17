@@ -10,13 +10,10 @@ void merge_sort(int *array, size_t size)
 	size_t i;
 	int *arr;
 
-	if (size < 2)
+	if (!array || size < 2)
 		return;
 
 	arr = malloc(sizeof(int) * size);
-
-	for (i = 0; i < size; i++)
-		arr[i] = array[i];
 
 	merge_recursion(arr, array, 0, size);
 	free(arr);
