@@ -8,10 +8,7 @@
 void quick_sort(int *array, size_t size)
 {
 	if (size < 2)
-	{
-		print_array(array, size);
 		return;
-	}
 
 	quick_recursion(array, 0, (int)size - 1, size);
 }

@@ -26,13 +26,10 @@ void insertion_sort_list(listint_t **list)
 {
 	listint_t *curr = *list, *one, *two, *three, *four;
 
-	if (!list || !*list)
+	if (!list || !(*list))
 		return;
 	if (len_list(*list) < 2)
-	{
-		print_list(*list);
 		return;
-	}
 	while (1)
 	{
 		while (curr->next && curr->n < curr->next->n)

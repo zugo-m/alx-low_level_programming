@@ -14,10 +14,7 @@ void shell_sort(int *array, size_t size)
 	int tmp;
 
 	if (size < 2)
-	{
-		print_array(array, size);
 		return;
-	}
 
 	while ((gap = gap * 3 + 1) < size)
 		;
