@@ -13,12 +13,12 @@ void radix_sort(int *array, size_t size)
 	if (!array || size < 2)
 		return;
 
-	max = array[0];
-	for (i = 1; i < size; i++)
+	max = 0;
+	for (i = 0; i < size; i++)
 		if (array[i] > max)
 			max = array[i];
 
-	for (lsd = 1; size / lsd > 0; lsd *= 10)
+	for (lsd = 1; max / lsd > 0; lsd *= 10)
 	{
 		count_sort_LSD(array, size, lsd);
 		print_array(array, size);
@@ -33,16 +33,13 @@ void radix_sort(int *array, size_t size)
  */
 void count_sort_LSD(int *array, size_t size, size_t lsd)
 {
-	int count_arr[10] = {0}, *out_arr, num, l, m;
+	int count_arr[10] = {0}, *out_arr, l, m;
 	size_t k, n;
 
 	out_arr = malloc(sizeof(int) * size);
 
 	for (k = 0; k < size; k++)
-	{
-		num = array[k];
-		count_arr[(num / lsd) % 10]++;
-	}
+		count_arr[(array[k] / lsd) % 10]++;
 	for (l = 1; l < 10; l++)
 		count_arr[l] += count_arr[l - 1];
 
