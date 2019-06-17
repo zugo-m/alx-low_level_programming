@@ -29,28 +29,30 @@ void insertion_sort_list(listint_t **list)
 	if (len_list(*list) < 2)
 		return;
 
-	while (1)
+	while (curr)
 	{
-		while (curr->next && curr->n < curr->next->n)
-			curr = curr->next;
-		if (!curr->next)
-			return;
-		one = curr->prev;
-		two = curr;
-		three = curr->next;
-		four = curr->next->next;
+		if (curr->prev && curr->n < curr->prev->n)
+		{
+			one = curr->prev->prev;
+			two = curr->prev;
+			three = curr;
+			four = curr->next;
 
-		two->next = four;
-		if (four)
-			four->prev = two;
-		three->next = two;
-		three->prev = two->prev;
-		if (one)
-			one->next = three;
+			two->next = four;
+			if (four)
+				four->prev = two;
+			three->next = two;
+			three->prev = two->prev;
+			if (one)
+				one->next = three;
+			else
+				*list = three;
+			two->prev = three;
+			curr = *list;
+			print_list(*list);
+			continue;
+		}
 		else
-			*list = three;
-		two->prev = three;
-		curr = *list;
-		print_list(curr);
+			curr = curr->next;
 	}
 }
