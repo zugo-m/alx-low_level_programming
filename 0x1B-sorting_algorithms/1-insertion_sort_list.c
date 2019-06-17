@@ -43,7 +43,7 @@ void insertion_sort_list(listint_t **list)
 			if (four)
 				four->prev = two;
 			three->next = two;
-			three->prev = two->prev;
+			three->prev = one;
 			if (one)
 				one->next = three;
 			else
