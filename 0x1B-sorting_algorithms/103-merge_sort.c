@@ -49,7 +49,7 @@ void merge_recursion(int *arr, int *array, size_t left, size_t right)
 void merge_subarray(int *arr, int *array, size_t left,
 		size_t middle, size_t right)
 {
-	size_t i, j, k;
+	size_t i, j, k = 0;
 
 	printf("Merging...\n");
 	printf("[left]: ");
@@ -57,7 +57,7 @@ void merge_subarray(int *arr, int *array, size_t left,
 	printf("[right]: ");
 	print_array(array + middle, right - middle);
 
-	for (i = left, j = middle, k = 0; i < middle && j < right; k++)
+	for (i = left, j = middle; i < middle && j < right; k++)
 	{
 		if (array[i] < array[j])
 			arr[k] = array[i++];
@@ -74,5 +74,5 @@ void merge_subarray(int *arr, int *array, size_t left,
 		array[k] = arr[i++];
 
 	printf("[Done]: ");
-	print_array(arr + left, right - left);
+	print_array(array + left, right - left);
 }
