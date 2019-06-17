@@ -7,7 +7,6 @@
  */
 void merge_sort(int *array, size_t size)
 {
-	size_t i;
 	int *arr;
 
 	if (!array || size < 2)
