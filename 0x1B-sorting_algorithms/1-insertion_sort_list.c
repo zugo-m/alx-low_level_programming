@@ -24,11 +24,13 @@ int len_list(listint_t *h)
  */
 void insertion_sort_list(listint_t **list)
 {
-	listint_t *curr = *list, *one = NULL;
+	listint_t *curr = NULL, *one = NULL;
 	listint_t *two = NULL, *three = NULL, *four = NULL;
 
 	if (!list || !(*list) || len_list(*list) < 2)
 		return;
+
+	curr = *list;
 
 	while (curr)
 	{
