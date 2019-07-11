@@ -7,13 +7,13 @@ def num_neighbors(grid, i, j):
 
     num = 0
 
-    if grid[i - 1][j]:
+    if i > 0 and grid[i - 1][j]:
         num += 1
-    if grid[i][j - 1]:
+    if j > 0 and grid[i][j - 1]:
         num += 1
-    if grid[i][j + 1]:
+    if j < len(grid[i]) and grid[i][j + 1]:
         num += 1
-    if grid[i + 1][j]:
+    if i < len(grid) - 1 and grid[i + 1][j]:
         num += 1
 
     return num
