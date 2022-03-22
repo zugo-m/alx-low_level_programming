@@ -26,4 +26,3 @@ void rev_string(char *s)
 		s[y--] = str;
 	}
 }
-
