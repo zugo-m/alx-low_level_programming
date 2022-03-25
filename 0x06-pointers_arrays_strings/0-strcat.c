@@ -13,13 +13,13 @@ char *_strcat(char *dest, char *src)
 
 	b = -1;
 
-	for (a = 0; dest[a] != '\0'; a++); /*Increments the destination sting when not terminated*/
-	
+	for (a = 0; dest[a] != '\0'; a++);
+
 	do {
-		b++; /*print source string forward considering the condition*/
+		b++;
 		dest[a] = src[b];
 		a++;
-	}while (src[b] != '\0');
+	} while (src[b] != '\0');
 
 	return (dest);
 }
