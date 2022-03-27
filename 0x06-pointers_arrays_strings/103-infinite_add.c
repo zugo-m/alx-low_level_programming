@@ -9,7 +9,6 @@
  * size_r: size of r
  * Return: char
  */
-
 int _atoi(char *s)
 {
 	int sign = 1, resp = 0, firstNum;
@@ -53,7 +52,6 @@ str[i] = ('0' + n);
 
 }
 
-
 char *infinite_add(char *n1, char *n2, char *r, int size_r)
 {
     int sum, a, b;
@@ -61,6 +59,4 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
     b = _atoi(n2);
 
     sum = a + b;
-
-
 }
