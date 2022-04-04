@@ -16,6 +16,6 @@ File 8-print_diagsums.c is a function that prints the sum of the two diagonals o
 
 File 9-set_string.c is a function that sets the value of a pointer to a char.
 
-File holberton.h is the header file with the functions prototypes.
+File main.h is the header file with the functions prototypes.
 
 File _putchar.c is the file that contains the _putchar function.
