@@ -1,26 +1,26 @@
-#include "main.h"
+#include <stdio.h>
+#include "holberton.h"
 
 /**
- * print_diagsums - prints the sum of the two diagonals of a square matrix of integers
- * @a: 
- * @size:
- *
+ * print_diagsums - prints the sum of the two diagonals
+ * of a square matrix of integers
+ * @a: square matrix of which we print the sum of diagonals
+ * @size: size of the matrix
  */
 void print_diagsums(int *a, int size)
 {
 	int i;
 
-	unsigned int sumr, suml;
+	unsigned int sum, sum1;
 
-	sumr = 0;
-	suml = 0;
+	sum = 0;
+	sum1 = 0;
 
 	for (i = 0; i < size; i++)
 	{
-		sumr = sumr + a[(size * i) + 1];
-		suml = suml + a[(size * (i +1)) - (i +1)];
+		sum += a[(size * i) + i];
+		sum1 += a[(size * (i + 1)) - (i + 1)];
 	}
-	
-	printf("%d,%d\n", sumr, suml);
+
+	printf("%d, %d\n", sum, sum1);
 }
-				

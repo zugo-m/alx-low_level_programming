@@ -1,12 +1,12 @@
-#include "main.h"
+#include "holberton.h"
 
 /**
- * *_memcpy - copiees memory area
- * @dest: where size of memory area is copied to
- * @src: where size of memory area is copeid from
- * @n: size of memory area to copy
+ * *_memcpy - copies memory area
+ * @dest: destination memory area
+ * @src: memory area to copy from
+ * @n: number of bytes to copy
  *
- * Return: a pointer to dest
+ * Return: pointer to dest
  */
 char *_memcpy(char *dest, char *src, unsigned int n)
 {
@@ -19,4 +19,3 @@ char *_memcpy(char *dest, char *src, unsigned int n)
 
 	return (dest);
 }
-
