@@ -17,4 +17,4 @@ void _puts_recursion(char *s)
 	_putchar(*s);
 	/*Recursive call: the method calls itself*/
 	_puts_recursion(s + 1);
-}	
+}
