@@ -8,11 +8,12 @@
  */
 void _puts_recursion(char *s)
 {
-	//base case
+	/*base case*/
 	if (*s == '\0')
 	{
 		_putchar('\n');
 	}
 	_putchar(*s);
+	/*Recursive call: the method calls itself*/
 	_puts_recursion(s + 1);
 }	
