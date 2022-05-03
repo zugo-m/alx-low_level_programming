@@ -1,4 +1,4 @@
-#include "main"
+#include "main.h"
 
 /**
  * _pow_recursion - function that returns the value of a number raised to the power of another
